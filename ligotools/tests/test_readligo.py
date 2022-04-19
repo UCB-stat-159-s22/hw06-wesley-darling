@@ -2,7 +2,7 @@ from ligotools import readligo as rl
 import pytest 
 
 def test_one():
-	assert 1
+	assert False
 	
 def test_two():
 	pass
