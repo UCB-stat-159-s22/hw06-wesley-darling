@@ -637,13 +637,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;ligotools/utils.py&quot;</span><span class="gt">, line </span><span class="mi">40</span>
-    <span class="k">def</span> <span class="nf">plotter</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">timemax</span><span class="p">,</span> <span class="n">SNR</span><span class="p">,</span> <span class="n">pcolor</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="s1">&#39;figures/&#39;</span><span class="p">,</span> <span class="n">eventname</span><span class="o">=</span><span class="s1">&#39;GW150914&#39;</span><span class="p">,</span> <span class="n">plottype</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">tevent</span><span class="p">,</span> <span class="n">strain_whitenbp</span><span class="p">,</span> <span class="n">template_match</span><span class="p">,</span> <span class="n">template_fft</span><span class="p">,</span> <span class="n">datafreq</span><span class="p">,</span> <span class="n">d_eff</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">data_psd</span><span class="p">,</span> <span class="n">fs</span><span class="p">):</span>
-<span class="ne">SyntaxError</span>: non-default argument follows default argument
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="read-the-event-properties-from-a-local-json-file-download-in-advance">
 <h3>Read the event properties from a local json file (download in advance):<a class="headerlink" href="#read-the-event-properties-from-a-local-json-file-download-in-advance" title="Permalink to this headline">¶</a></h3>
@@ -965,6 +958,18 @@ Whitening requires no prior knowledge of spectral lines, etc; only the data are 
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">strain_H1_whiten</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>131072
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="spectrograms">
 <h2>Spectrograms<a class="headerlink" href="#spectrograms" title="Permalink to this headline">¶</a></h2>
@@ -1014,8 +1019,8 @@ Whitening requires no prior knowledge of spectral lines, etc; only the data are 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/index_28_0.png" src="_images/index_28_0.png" />
-<img alt="_images/index_28_1.png" src="_images/index_28_1.png" />
+<img alt="_images/index_30_0.png" src="_images/index_30_0.png" />
+<img alt="_images/index_30_1.png" src="_images/index_30_1.png" />
 </div>
 </div>
 <p>In the above spectrograms, you may see lots of excess power below ~20 Hz, as well as strong spectral lines at 500, 1000, 1500 Hz (also evident in the ASDs above). The lines at multiples of 500 Hz are the harmonics of the “violin modes” of the fibers holding up the mirrors of the Advanced LIGO interferometers.</p>
@@ -1058,8 +1063,8 @@ Whitening requires no prior knowledge of spectral lines, etc; only the data are 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/index_30_0.png" src="_images/index_30_0.png" />
-<img alt="_images/index_30_1.png" src="_images/index_30_1.png" />
+<img alt="_images/index_32_0.png" src="_images/index_32_0.png" />
+<img alt="_images/index_32_1.png" src="_images/index_32_1.png" />
 </div>
 </div>
 <p>Loud (high SNR) signals may be visible in these spectrograms.  Compact object mergers show a characteristic “chirp” as the signal rises in frequency.  If you can’t see anything, try
@@ -1204,7 +1209,7 @@ v/c at peak = 0.57
 Radius of final BH = 199 km
 </pre></div>
 </div>
-<img alt="_images/index_34_1.png" src="_images/index_34_1.png" />
+<img alt="_images/index_36_1.png" src="_images/index_36_1.png" />
 </div>
 </div>
 </div>
@@ -1445,6 +1450,19 @@ this is the “audio” equivalent of the enhanced visuals that NASA employs on 
 <span class="c1"># and the template:</span>
 <span class="n">template_p_shifted</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">reqshift</span><span class="p">(</span><span class="n">template_p_smooth</span><span class="p">,</span><span class="n">fshift</span><span class="o">=</span><span class="n">fshift</span><span class="p">,</span><span class="n">sample_rate</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
 <span class="n">utils</span><span class="o">.</span><span class="n">write_wavfile</span><span class="p">(</span><span class="n">audio_path</span><span class="o">+</span><span class="n">eventname</span><span class="o">+</span><span class="s2">&quot;_template_shifted.wav&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">fs</span><span class="p">),</span> <span class="n">template_p_shifted</span><span class="p">[</span><span class="n">indxt</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">reqshift</span><span class="p">(</span><span class="n">strain_H1</span><span class="p">,</span><span class="n">fshift</span><span class="o">=</span><span class="mf">400.</span><span class="p">,</span><span class="n">sample_rate</span><span class="o">=</span><span class="n">fs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.99906995e-19,  2.47791446e-19,  1.59651061e-19, ...,
+       -1.06015043e-19, -1.03602110e-19, -3.62208015e-20])
 </pre></div>
 </div>
 </div>
