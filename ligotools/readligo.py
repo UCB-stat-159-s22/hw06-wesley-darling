@@ -152,7 +152,7 @@ def loaddata(filename, ifo=None, tvec=True, readstrain=True):
     The detector should be H1, H2, or L1.
 
     The return value is: 
-    STRAIN, TIME, CHANNEL_DICT
+    STRAIN, TIME, CHANNEL_DICTwhi
 
     STRAIN is a vector of strain values
     TIME is a vector of time values to match the STRAIN vector

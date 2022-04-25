@@ -20,3 +20,4 @@ clean :
 	rm -f $(wildcard data/*.csv)
 	rm -f conf.py
 	rm -rf _build
+	rm -rf 

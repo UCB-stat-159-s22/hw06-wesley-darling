@@ -1,6 +1,15 @@
 from ligotools import utils
+from ligotools import readligo as rl
+
+
 
 def test_whiten():
-	actual = utils.whiten(strain_H1,psd_H1,dt)
-	expected = 
-	assert actual == expected
+	pass
+def test_write_wavfile():
+	pass
+
+def test_reqshift():
+	pass
+
+def test_plotter():
+	pass
